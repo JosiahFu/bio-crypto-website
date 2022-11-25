@@ -1,0 +1,55 @@
+body {
+    background-color: #222;
+    color: #ddd;
+    margin: 0;
+}
+
+.content {
+    display: inline-block;
+    height: 200vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    height: 100vh;
+    width: 100vw;
+    background-image:
+        linear-gradient(0deg, #0000007f, #0000007f),
+        url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdataanalyticsedge.com%2Fwp-content%2Fuploads%2F2018%2F04%2F0.jpeg&f=1&nofb=1&ipt=c79cdca507479faac13ad272677b34d7c038974b920baa4113b3c65f3b77083a&ipo=images');
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 4em;
+    text-align: center;
+    position: sticky;
+    box-sizing: border-box;
+    margin-top: 40vh;
+    top: 20px;
+    color: #7f7;
+    background-color: #222c;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    transition: 0.2s ease-in-out;
+}
+
+h1.stick {
+    font-size: 2em;
+}
