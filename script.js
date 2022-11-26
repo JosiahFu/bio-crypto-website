@@ -1,8 +1,13 @@
+const headerTitle = document.getElementById('title');
 window.onscroll = () => {
-    if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight - document.getElementById('title').clientHeight - 40) {
-        document.getElementById('title').classList.add('stick');
+    headerTitle.style.fontSize = '4em';
+    if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight - (headerTitle.clientHeight + 20)) {
+        headerTitle.classList.add('stick');
+        headerTitle.style.top = '';
     } else {
-        document.getElementById('title').classList.remove('stick');
+        headerTitle.classList.remove('stick');
+        headerTitle.style.top = (window.innerHeight + document.documentElement.scrollTop) / 2 + 'px';
     }
+    headerTitle.style.fontSize = '';
     document.getElementById('header').style.backgroundPositionY = document.documentElement.scrollTop / 2 + 'px';
 };

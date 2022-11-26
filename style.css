@@ -19,9 +19,6 @@ h6 {
 }
 
 .header {
-    position: absolute;
-    top: 0;
-    left: 0;
     display: inline-block;
     height: 100vh;
     width: 100vw;
@@ -36,20 +33,45 @@ h1 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 4em;
     text-align: center;
-    position: sticky;
+    /* position: sticky; */
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    width: calc(100% - 40px);
     box-sizing: border-box;
-    margin-top: 40vh;
-    top: 20px;
+    /* margin-top: 40vh; */
+    margin: 0;
+    /* top: 20px; */
     color: #7f7;
     background-color: #222c;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+    padding: 20px;
     border-radius: 20px;
-    transition: 0.2s ease-in-out;
+    transform: translateY(-50%);
+    transition: font-size 0.1s ease-in-out, left 0.2s ease-in-out, width 0.2s ease-in-out;
 }
 
 h1.stick {
     font-size: 2em;
+    position: fixed;
+    top: 20px;
+    transform: none;
+    left: 340px;
+    width: calc(100% - 360px);
+}
+
+.body {
+    margin: 50px;
+}
+
+.sidebar {
+    width: 300px;
+    float: left;
+    margin: 20px;
+    position: sticky;
+    top: 50px;
+}
+
+.content {
+    width: calc(100% - 300px);
+    float: right;
 }
