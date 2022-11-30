@@ -4,11 +4,6 @@ body {
     margin: 0;
 }
 
-.content {
-    display: inline-block;
-    height: 200vh;
-}
-
 h1,
 h2,
 h3,
@@ -26,10 +21,14 @@ h6 {
         linear-gradient(0deg, #0000007f, #0000007f),
         url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdataanalyticsedge.com%2Fwp-content%2Fuploads%2F2018%2F04%2F0.jpeg&f=1&nofb=1&ipt=c79cdca507479faac13ad272677b34d7c038974b920baa4113b3c65f3b77083a&ipo=images');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
 }
 
-h1 {
+.test {
+    opacity: 0;
+}
+
+.title {
     font-family: 'Courier New', Courier, monospace;
     font-size: 4em;
     text-align: center;
@@ -43,20 +42,24 @@ h1 {
     margin: 0;
     /* top: 20px; */
     color: #7f7;
-    background-color: #222c;
+    background-color: #333c;
     padding: 20px;
     border-radius: 20px;
     transform: translateY(-50%);
-    transition: font-size 0.1s ease-in-out, left 0.2s ease-in-out, width 0.2s ease-in-out;
+    transition: font-size 0.2s ease-in-out, left 0.2s ease-in-out, width 0.2s ease-in-out;
+    /* transition: transform 0s, top 0s, 0.2s ease-in-out; */
 }
 
-h1.stick {
+.title.stick, .title.test.small {
     font-size: 2em;
     position: fixed;
-    top: 20px;
+    top: 0;
+    left: 0;
     transform: none;
-    left: 340px;
-    width: calc(100% - 360px);
+    width: 100%;
+    border-radius: 0;
+    /* left: 340px;
+    width: calc(100% - 360px); */
 }
 
 .body {
@@ -67,11 +70,49 @@ h1.stick {
     width: 300px;
     float: left;
     margin: 20px;
-    position: sticky;
-    top: 50px;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #333c;
+    border-radius: 20px;
+}
+
+.sidebar.stick {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.nav {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav::before {
+    position: relative;
+    top: 0.1em;
+    left: 0;
+    display: inline-block;
+    content: "";
+    height: 0.9em;
+    width: 0.9em;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid white;
+    margin-right: 0.2em;
+}
+
+.nav.selected {
+    font-weight: bold;
+}
+
+.nav.selected::before {
+    background-color: white;
 }
 
 .content {
-    width: calc(100% - 300px);
+    width: calc(100% - 340px);
     float: right;
+}
+
+h2 {
+    margin-top: 2em;
 }
