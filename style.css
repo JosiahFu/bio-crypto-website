@@ -42,11 +42,11 @@ h6 {
     margin: 0;
     /* top: 20px; */
     color: #7f7;
-    background-color: #333c;
+    background-color: #444c;
     padding: 20px;
     border-radius: 20px;
     transform: translateY(-50%);
-    transition: font-size 0.2s ease-in-out, left 0.2s ease-in-out, width 0.2s ease-in-out;
+    transition: font-size 0.5s ease-in-out, left 0.5s ease-in-out, width 0.5s ease-in-out;
     /* transition: transform 0s, top 0s, 0.2s ease-in-out; */
 }
 
@@ -72,7 +72,7 @@ h6 {
     margin: 20px;
     box-sizing: border-box;
     padding: 20px;
-    background-color: #333c;
+    background-color: #333;
     border-radius: 20px;
 }
 
@@ -84,6 +84,14 @@ h6 {
 
 .nav {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    user-select: none;
+    color: #ddd;
+    border-radius: 6px;
+}
+
+.nav.subheading {
+    margin-left: 0.9em;
 }
 
 .nav::before {
@@ -92,12 +100,13 @@ h6 {
     left: 0;
     display: inline-block;
     content: "";
-    height: 0.9em;
-    width: 0.9em;
+    height: 0.8em;
+    width: 0.8em;
     border-radius: 50%;
     box-sizing: border-box;
-    border: 2px solid white;
+    border: 2px solid #ddd;
     margin-right: 0.2em;
+    margin-left: 0.2em;
 }
 
 .nav.selected {
@@ -105,14 +114,50 @@ h6 {
 }
 
 .nav.selected::before {
-    background-color: white;
+    background-color: #ddd;
+}
+
+.nav:hover {
+    background-color: #444;
 }
 
 .content {
-    width: calc(100% - 340px);
+    width: calc(100% - 360px);
     float: right;
+    margin: 20px 20px 20px 0;
+    text-align: justify;
 }
 
 h2 {
+    text-align: center;
+    font-size: 2em;
+    background-color: #333;
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2:first-child {
+    margin-top: 0;
+}
+
+/* h2:not(:first-child) {
     margin-top: 2em;
+} */
+
+h3:not(:first-child) {
+    margin-top: 1.5em;
+}
+
+.columns {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.column {
+    width: 100%;
 }
