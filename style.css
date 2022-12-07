@@ -152,6 +152,10 @@ h3:not(:first-child) {
     margin-top: 1.5em;
 }
 
+h3 {
+    margin-left: 0.5em;
+}
+
 .columns {
     display: flex;
     flex-direction: row;

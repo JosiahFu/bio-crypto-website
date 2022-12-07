@@ -5,12 +5,12 @@ const sidebar = document.getElementById('sidebar');
 
 document.getElementById('header').style.backgroundPositionY = document.documentElement.scrollTop / 2 + 'px';
 
-const navClick = e => {
+const navClick = (link, target) => {
     for (let j of document.getElementsByClassName('selected')) {
         j.classList.remove('selected');
     }
-    e.target.classList.add('selected');
-    const target = document.getElementById(e.target.getAttribute('target'));
+    link.classList.add('selected');
+    // const target = document.getElementById(target.getAttribute('target'));
     window.scrollTo({
         top: target.offsetTop - titleTestSmall.clientHeight - 20,
         behavior: "smooth"
@@ -26,16 +26,16 @@ const navClick = e => {
 for (let i of document.getElementsByClassName('heading')) {
     const nav = document.createElement('div');
     nav.appendChild(document.createTextNode(i.innerText));
-    nav.setAttribute('target', i.id);
+    // nav.setAttribute('target', i.id);
     nav.classList.add('nav');
     if (i.tagName == 'H3') {
         nav.classList.add('subheading');
     }
-    nav.addEventListener('click', navClick);
+    nav.addEventListener('click', () => navClick(nav, i));
     sidebar.appendChild(nav);
 }
 
-window.onscroll = () => {
+const updateScrolling = () => {
     if (document.documentElement.scrollTop > window.innerHeight - (titleTestLarge.clientHeight + 20)) {
         headerTitle.classList.add('stick');
         headerTitle.style.top = '';
@@ -51,3 +51,7 @@ window.onscroll = () => {
     }
     document.getElementById('header').style.backgroundPositionY = document.documentElement.scrollTop / 2 + 'px';
 };
+
+document.addEventListener('scroll', updateScrolling);
+
+updateScrolling();
