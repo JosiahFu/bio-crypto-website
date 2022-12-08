@@ -45,7 +45,7 @@ h6 {
     background-color: #444c;
     padding: 20px;
     border-radius: 20px;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
     transition: font-size 0.5s ease-in-out, left 0.5s ease-in-out, width 0.5s ease-in-out;
     /* transition: transform 0s, top 0s, 0.2s ease-in-out; */
 }
@@ -55,7 +55,7 @@ h6 {
     position: fixed;
     top: 0;
     left: 0;
-    transform: none;
+    /* transform: none; */
     width: 100%;
     border-radius: 0;
     /* left: 340px;
@@ -164,4 +164,21 @@ h3 {
 
 .column {
     width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .content {
+        width: initial;
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .columns {
+        flex-direction: column;
+    }
 }

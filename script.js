@@ -41,7 +41,7 @@ const updateScrolling = () => {
         headerTitle.style.top = '';
     } else {
         headerTitle.classList.remove('stick');
-        headerTitle.style.top = (window.innerHeight + document.documentElement.scrollTop) / 2 + 'px';
+        headerTitle.style.top = (window.innerHeight + document.documentElement.scrollTop - titleTestLarge.clientHeight) / 2 + 'px';
     }
     if (document.documentElement.scrollTop + titleTestSmall.clientHeight > window.innerHeight) {
         sidebar.classList.add('stick');
