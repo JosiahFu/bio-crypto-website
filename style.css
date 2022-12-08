@@ -88,6 +88,8 @@ h6 {
     user-select: none;
     color: #ddd;
     border-radius: 6px;
+    /* margin: 0.3em 0; */
+    padding: 4px;
 }
 
 .nav.subheading {
@@ -154,6 +156,7 @@ h3:not(:first-child) {
 
 h3 {
     margin-left: 0.5em;
+    font-size: 1.5em;
 }
 
 .columns {
@@ -164,6 +167,14 @@ h3 {
 
 .column {
     width: 100%;
+}
+
+.columns.reverse {
+    flex-direction: row-reverse;
+}
+
+.section {
+    margin: 80px 0;
 }
 
 @media screen and (max-width: 700px) {
@@ -179,6 +190,6 @@ h3 {
 
 @media screen and (max-width: 1000px) {
     .columns {
-        flex-direction: column;
+        flex-direction: column !important;
     }
 }
