@@ -1,0 +1,400 @@
+.anim {
+    position: relative;
+    height: 250px;
+}
+
+:root {
+    --primary-color: #7f7;
+    --background-color: #919191;
+    --accent-color: rgb(62, 211, 211);
+}
+
+.globe {
+    position: absolute;    
+    width: 100px;
+    height: 100px;
+    left: calc(50% - 50px);
+    top: 0;
+}
+
+.anim div {
+    box-sizing: border-box;
+    position: absolute;
+    display: inline-block;
+}
+
+.globe div:nth-child(1), .globe div:nth-child(2) {
+    top: 0;
+    width: 100px;
+    height: 100px;
+    border: 6px solid var(--primary-color);
+    border-radius: 50%;
+}
+
+.globe div:nth-child(1) {
+    left: 0;
+}
+
+.globe div:nth-child(2) {
+    width: 60px;
+    left: 20px;
+    top: 0;
+}
+
+.globe div:nth-child(3) {
+    left: 47px;
+    top: 0;
+    height: 100px;
+    width: 6px;
+    background-color: var(--primary-color);
+}
+
+.globe div:nth-child(4), .globe div:nth-child(5), .globe div:nth-child(6) {
+    height: 6px;
+    background-color: var(--primary-color);
+}
+
+.globe div:nth-child(4), .globe div:nth-child(6) {
+    left: 7px;    
+    width: 86px;
+}
+
+.globe div:nth-child(4) {
+    top: 22px;
+}
+
+.globe div:nth-child(5) {
+    top: 47px;
+    width: 100px;
+}
+
+.globe div:nth-child(6) {
+    top: 72px;
+}
+
+.house {
+    height: 60px;
+    width: 100px;
+    margin-top: 40px;
+    background-color: var(--background-color);
+}
+
+.house::before {
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 40px solid var(--background-color);
+    content: "";
+    position: relative;
+    top: -40px;
+    left: 0;
+}
+
+.house {
+    position: absolute;
+    bottom: 0;
+}
+
+.house.a {
+    left: 0;
+}
+
+.house.b {
+    right: 0;
+}
+
+.coin {
+    height: 40px;
+    width: 40px;
+    border: 6px solid var(--accent-color);
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    color: var(--accent-color);
+    font-size: 28px;
+    position: absolute;
+    animation: coin 5s ease-in-out infinite;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@keyframes coin {
+    0%, 10% {
+        left: 30px;
+        top: calc(100% - 70px);
+    }
+    30% {
+        left: 30px;
+        top: 30px;
+    }
+    70% {
+        left: calc(100% - 70px);
+        top: 30px;
+    }
+    90%, 100% {
+        left: calc(100% - 70px);
+        top: calc(100% - 70px);
+    }
+}
+
+.chain {
+    height: 100px;
+    width: 100%;
+    top: 75px;
+    left: 0;
+    display: flex !important;
+    gap: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.chain > div {
+    width: 100%;
+    height: 100%;
+    position: static;
+    display: block;
+    background-color: var(--background-color);
+}
+
+.chain > div > div {
+    text-align: center;
+    position: relative;
+    top: -40px;
+    display: block;
+    color: var(--primary-color);
+}
+
+.chain > div:last-child {
+    animation: chain-1 5s ease-in-out infinite;
+    color: var(--accent-color);
+    position: relative;
+}
+
+.chain > div:last-child > div {
+    animation: chain-2 5s ease-in-out infinite;
+    color: var(--accent-color);
+}
+
+.chain > div:last-child::before, .chain > div:last-child::after {
+    display: block;
+    position: absolute;
+    content: "aaaaaaaa";
+    color: transparent;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+.chain > div:last-child::before {
+    animation: chain-3 5s ease infinite;
+}
+
+.chain > div:last-child::after {
+    animation: chain-4 5s ease infinite;
+}
+
+@keyframes chain-1 {
+    0%, 10% {
+        background-color: transparent;
+    }
+    20%, 100% {
+        background-color: var(--background-color);
+    }
+}
+
+@keyframes chain-2 {
+    0%, 50% {
+        opacity: 0;
+    }
+    51%, 100% {
+        opacity: 1;
+    }
+}
+
+@keyframes chain-3 {
+    0%, 30% {
+        top: -40px;        
+        left: -100%;
+        opacity: 0;
+    }
+    50% {
+        top: -40px;
+        left: 0;
+        opacity: 1;
+    }
+    70%, 100% {
+        top: -40px;
+        left: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes chain-4 {
+    0%, 30% {
+        top: 0px;        
+        left: 0;
+        opacity: 0;
+    }
+    50% {
+        top: -40px;
+        left: 0;
+        opacity: 1;
+    }
+    70%, 100% {
+        top: -40px;
+        left: 0;
+        opacity: 0;
+    }
+}
+
+.bolt {
+    width: 250px;
+    height: 250px;
+    left: calc(50% - 125px);
+    animation: bolt 2s ease-in-out alternate infinite;
+}
+
+.bolt div:nth-child(1) {
+    border-top: 50px solid transparent;
+    border-left: 150px solid var(--primary-color);
+    transform: rotate(-45deg) translate(20px,90px);
+}
+
+.bolt div:nth-child(2) {
+    border-bottom: 50px solid transparent;
+    border-right: 150px solid var(--primary-color);
+    transform: rotate(-45deg) translate(-100px,120px);
+}
+
+@keyframes bolt {
+    0% {
+        filter: drop-shadow(0 0 5px var(--accent-color));
+    }
+    100% {
+        filter: drop-shadow(0 0 20px var(--accent-color));
+    }
+}
+
+.no {
+    width: 250px;
+    height: 250px;
+    left: calc(50% - 125px);
+    animation: no 5s ease infinite;
+}
+
+.no div:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    border: 20px solid var(--primary-color);
+    border-radius: 50%;
+}
+
+.no div:nth-child(2) {
+    width: 20px;
+    height: 250px;
+    left: 115px;
+    transform: rotate(45deg);
+    background-color: var(--primary-color);
+}
+
+.coin2 {
+    width: 100px;
+    height: 100px;
+    border: 10px solid var(--accent-color);
+    border-radius: 50%;
+    font-size: 80px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: var(--accent-color);
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+}
+
+@keyframes no {
+    0% {
+        transform: none;
+    }
+    30%, 50% {
+        transform: rotate(450deg);
+    }
+    80%, 100% {
+        transform: none;
+    }
+}
+
+
+.mine {
+    height: 100px;
+    width: 80px;
+    background-color: var(--background-color);
+    top: 75px;
+}
+.mine.a { left: 0; }
+.mine.b { left: 90px; }
+.mine.c { left: 180px; }
+.mine.d { left: 270px; }
+.hash {
+    font-family: monospace;
+    top: -25px;
+    width: 80px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.hash.guess {
+    left: 270px;
+    top: 50px;
+    animation: hash-guess 10s ease-in-out infinite;
+}
+
+.hash.guess.a { animation-delay: 0s; }
+.hash.guess.b { animation-delay: -8s; }
+.hash.guess.c { animation-delay: -6s;}
+
+.hash.guess.correct {
+    animation-name: hash-correct;
+    animation-delay: -4s;
+}
+
+.hash.goal {
+    left: 270px;
+    top: 30px;
+    color: var(--accent-color);
+}
+
+@keyframes hash-guess {
+    0% {
+        transform: scale(0);
+        color: var(--primary-color);
+    }
+    4%, 8% {
+        transform: scale(100%);
+        color: var(--primary-color);
+    }
+    12%, 16% {
+        transform: scale(100%);
+        color: red;
+    }
+    20%, 100% {
+        transform: scale(0);
+        color: red;
+    }
+}
+
+@keyframes hash-correct {
+    0% {
+        transform: scale(0);
+        color: var(--primary-color);
+    }
+    4%, 8% {
+        transform: scale(100%);
+        color: var(--primary-color);
+    }
+    12%, 40% {
+        transform: scale(100%);
+        color: var(--accent-color);
+    }
+    40.01%, 100% {
+        transform: scale(0);
+        color: transparent;
+    }
+}
